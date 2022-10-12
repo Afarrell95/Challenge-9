@@ -1,5 +1,5 @@
 // TODO: Include packages needed for this application
-const generateMkdwn = require("./generateMarkdown");
+const generateMkdwn = require("./utils/generateMarkdown");
 const inquirer = require("inquirer");
 const fs = require("fs");
 // TODO: Create an array of questions for user input
@@ -25,9 +25,10 @@ const questions = inquirer.prompt([
     name: "usage",
   },
   {
-    type: "input",
+    type: "list",
     message: "Provide license type",
     name: "license",
+    choices: ["MIT", "GPL", "GNU", "LGPL", "Apache", "BSD"],
   },
   {
     type: "input",
