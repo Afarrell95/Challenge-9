@@ -1,58 +1,57 @@
 // TODO: Include packages needed for this application
-const generateMarkdown = require("./generateMarkdown.js");
+const generateMkdwn = require("./generateMarkdown");
 const inquirer = require("inquirer");
 const fs = require("fs");
 // TODO: Create an array of questions for user input
-const questions = inquirer
-  .prompt([
-    {
-      type: "input",
-      message: "Description of your project",
-      name: "description",
-    },
-    {
-      type: "input",
-      message: "",
-      name: "table of contents",
-    },
-    {
-      type: "input",
-      message: "",
-      name: "installation",
-    },
-    {
-      type: "input",
-      message: "",
-      name: "usage",
-    },
-    {
-      type: "input",
-      message: "",
-      name: "license",
-    },
-    {
-      type: "input",
-      message: "",
-      name: "contributing",
-    },
-    {
-      type: "input",
-      message: "",
-      name: "tests",
-    },
-    {
-      type: "input",
-      message: "",
-      name: "questions",
-    },
-  ])
-  .then((data) => {
-    const filename = `${data.name.toLowerCase().split(" ").join("")}.json`;
+const questions = inquirer.prompt([
+  {
+    type: "input",
+    message: "Description of your project",
+    name: "description",
+  },
+  {
+    type: "input",
+    message: "Provide Table of Contents",
+    name: "table of contents",
+  },
+  {
+    type: "input",
+    message: "Provide installation instructions",
+    name: "installation",
+  },
+  {
+    type: "input",
+    message: "Provide usage of project",
+    name: "usage",
+  },
+  {
+    type: "input",
+    message: "Provide license type",
+    name: "license",
+  },
+  {
+    type: "input",
+    message: "Any contributors?",
+    name: "contributing",
+  },
+  {
+    type: "input",
+    message: "Provide test instructions",
+    name: "tests",
+  },
+  {
+    type: "input",
+    message: "Questions?",
+    name: "questions",
+  },
+]);
+//   .then((data) => {
+//     const filename = `${data.name.toLowerCase().split(" ").join("")}.json`;
 
-    fs.writeFile(filename, JSON.stringify(data, null, "\t"), (err) =>
-      err ? console.log(err) : console.log("Success!")
-    );
-  });
+//     fs.writeFile(filename, JSON.stringify(data, null, "\t"), (err) =>
+//       err ? console.log(err) : console.log("Success!")
+//     );
+//   });
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
