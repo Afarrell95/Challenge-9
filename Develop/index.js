@@ -7,18 +7,43 @@ const questions = inquirer
   .prompt([
     {
       type: "input",
-      message: "What is your user name?",
-      name: "username",
+      message: "Description of your project",
+      name: "description",
     },
     {
-      type: "password",
-      message: "What is your password?",
-      name: "password",
+      type: "input",
+      message: "",
+      name: "table of contents",
     },
     {
-      type: "password",
-      message: "Re-enter password to confirm:",
-      name: "confirm",
+      type: "input",
+      message: "",
+      name: "installation",
+    },
+    {
+      type: "input",
+      message: "",
+      name: "usage",
+    },
+    {
+      type: "input",
+      message: "",
+      name: "license",
+    },
+    {
+      type: "input",
+      message: "",
+      name: "contributing",
+    },
+    {
+      type: "input",
+      message: "",
+      name: "tests",
+    },
+    {
+      type: "input",
+      message: "",
+      name: "questions",
     },
   ])
   .then((data) => {
@@ -30,10 +55,16 @@ const questions = inquirer
   });
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  const readmeContent = generateMarkdown(data);
+
+  fs.writeFile("README.md", readmeContent, (err) =>
+    err ? console.log(err) : console.log("Successfully created README!")
+  );
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+const init = () => {};
 
 // Function call to initialize app
 init();
