@@ -49,6 +49,7 @@ const questions = inquirer
   ])
   .then((data) => {
     console.log(data);
+    return data;
   });
 
 // TODO: Create a function to write README file
