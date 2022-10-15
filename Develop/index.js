@@ -66,7 +66,7 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 const init = () => {
   prompt()
-    .then((data) => writeToFile())
+    .then(() => writeToFile())
     .then(() => console.log("Successfully created README!"))
     .catch((err) => console.error(err));
 };
