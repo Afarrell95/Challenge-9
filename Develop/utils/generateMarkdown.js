@@ -83,4 +83,4 @@ function generateMarkdown(data) {
 `;
 }
 
-module.exports = "./utils/generateMarkdown";
+module.exports = "/generateMarkdown";

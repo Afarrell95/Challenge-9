@@ -50,19 +50,18 @@ const prompt = () => {
     ])
     .then((data) => {
       console.log(data);
-      return data;
+      // return data;
+
+      // TODO: Create a function to write README file
+      // function writeToFile(data) {
+      const readmeContent = generateMarkdown(data);
+
+      fs.writeFile("README.md", readmeContent, (err) =>
+        err ? console.log(err) : console.log("Successfully created README!")
+      );
+      // }
     });
 };
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-  const readmeContent = generateMarkdown(data);
-
-  fs.writeFile("README.md", readmeContent, (err) =>
-    err ? console.log(err) : console.log("Successfully created README!")
-  );
-}
-
 // TODO: Create a function to initialize app
 const init = () => {
   prompt()
