@@ -1,5 +1,4 @@
 // TODO: Include packages needed for this application
-// const generateMkdwn = require("./utils/generateMarkdown.js");
 const inquirer = require("inquirer");
 const fs = require("fs");
 const makeReadMe = require("./utils/generateMarkdown.js");
@@ -14,11 +13,6 @@ const questions = [
     type: "input",
     message: "Description of your project",
     name: "description",
-  },
-  {
-    type: "input",
-    message: "Provide Table of Contents",
-    name: "table of contents",
   },
   {
     type: "input",
@@ -48,16 +42,15 @@ const questions = [
   },
   {
     type: "input",
-    message: "Questions?",
-    name: "questions",
+    message: "GitHub Account",
+    name: "questionsGithub",
+  },
+  {
+    type: "input",
+    message: "Email Account",
+    name: "questionsEmail",
   },
 ];
-// .then((data) => {
-//   console.log(data);
-//   // return data;
-
-//   // TODO: Create a function to write README file
-// function writeToFile(data) {
 
 // TODO: Create a function to initialize app
 const init = () => {
