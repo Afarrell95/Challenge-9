@@ -63,12 +63,10 @@ const questions = [
 const init = () => {
   return inquirer.prompt(questions).then((data) => {
     const readmeContent = makeReadMe.generateMarkdown(data);
-    console.log(readmeContent);
-    return data;
+    fs.writeFile("README.md", readmeContent, (err) =>
+      err ? console.log(err) : console.log("Successfully created README!")
+    );
   });
-  // .then((data) => fs.writeFile("README.md", readmeContent, (err) =>
-  // err ? console.log(err) : console.log("Successfully created README!")
-  // )
 };
 
 // Function call to initialize app
